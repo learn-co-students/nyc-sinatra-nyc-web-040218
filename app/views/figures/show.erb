@@ -1,0 +1,17 @@
+<h1><%= @figure.name %></h1>
+
+<% if @figure.landmarks %>
+  <ul>
+    <% @figure.landmarks.each do |lm| %>
+    <li><%= lm.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p>
+  <a href="/figures/<%= @figure.id %>/edit">Edit</a>
+</p>
+
+<p>
+  <a href="/figures">View All figures</a>
+</p>

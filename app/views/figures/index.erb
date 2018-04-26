@@ -1,0 +1,9 @@
+<h1>U.S. Figures</h1>
+
+<% if @figures.size > 0 %>
+    <ul>
+        <% @figures.each do |figure| %>
+            <li><a href="/figures/<%= figure.id %>"><%= figure.name %></a></li>
+        <% end %>
+    </ul>
+<% end %>
