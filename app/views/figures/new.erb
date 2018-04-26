@@ -1,0 +1,25 @@
+<h1>New</h1>
+
+<form method='POST' action='/figures'>
+  <p>
+    Name: <input type="text" name="name"><br/>
+  </p>
+
+  <p>Titles:
+    <%Title.all.each do |title|%>
+      <div>
+        <input type="checkbox" name="title_ids[]" value="<%=title.id%>" id="<%=title.id%>"><%=title.name%></input>
+      </div>
+    <%end%>
+  </p>
+
+  <p>Landmarks:
+    <%Landmark.all.each do |landmark|%>
+      <div>
+        <input type="checkbox" name="landmark_ids[]" value="<%=landmark.id%>" id="<%=landmark.id%>"><%=landmark.name%></input>
+      </div>
+    <%end%>
+  </p>
+
+  <input type="submit" value="submit">
+</form>
