@@ -3,6 +3,11 @@ class FiguresController < ApplicationController
         @figures = Figure.all
         erb :"figures/index"
     end
+    get '/figures/new' do
+      @landmarks = Landmark.all
+      @titles = Title.all
+      erb :"figures/new"
+    end
     get '/figures/:id' do
         @figure = Figure.find(params[:id])
         erb :"figures/show"
@@ -10,8 +15,11 @@ class FiguresController < ApplicationController
     post '/figures/:id' do
         # binding.pry
         @figure = Figure.find(params[:id])
-        # @figure.update("name" => params[:name])
         @figure.update(params[:figure])
+
+        if params[:landmark][:name]
+          Landmark.create(params[:landmark])
+        end
 
         erb :"figures/show"
     end
