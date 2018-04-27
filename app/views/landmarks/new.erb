@@ -1,11 +1,10 @@
 Create a New Landmark
-<form action="/landmarks/<%= @landmark.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
+<form action="/landmarks" method="post">
     <label>Name: 
-        <input type="text" name="name" value="<%= @landmark.name %>">
+        <input type="text" id="landmark_name" name="landmark[name]" >
     </label>
     <label>Year Completed: 
-        <input type="number" name="year_completed" value="<%= @landmark.year_completed %>">
+        <input type="number" id="landmark_year_completed" name="landmark[year_completed]">
     </label>
-    <button id="Submit">Submit Change</button>
+    <button id="Submit">Create New Landmark</button>
 </form>

@@ -3,23 +3,11 @@
 <form action="/landmarks/<%= @landmark.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label>Name: 
-        <input type="text" name="name" value="<%= @landmark.name %>">
+        <input type="text" id="name" name="landmark[name]" value="<%= @landmark.name %>">
     </label>
     <label>Year Completed: 
-        <input type="number" name="year_completed" value="<%= @landmark.year_completed %>">
+        <input type="number" id="year_completed" name="landmark[year_completed]" value="<%= @landmark.year_completed %>">
     </label>
-
-    <br><br>
-
-    <h3>Figure Selection</h3>
-    <select name="figure_id">
-        <option value="">Select Figure</option>
-        <% @figures.each do |figure| %>
-            <option value="<%= figure.id %>"><%= figure.name %></option>
-        <% end %>
-    <select>
-
-    <br><br>
     
-    <button id="Submit">Submit Change</button>
+    <button id="Submit">Edit Landmark</button>
 </form>
