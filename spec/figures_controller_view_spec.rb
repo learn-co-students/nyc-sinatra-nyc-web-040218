@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+
+
 describe FiguresController do
   before do
     queenb = Figure.create(:name => "Beyonce")
@@ -20,6 +22,7 @@ describe FiguresController do
     visit '/figures/new'
     expect(page.body).to include('<form')
     expect(page.body).to include('figure[name]')
+
     expect(page.body).to include('figure[title_ids][]')
     expect(page.body).to include('figure[landmark_ids][]')
     expect(page.body).to include('landmark[name]')
@@ -27,6 +30,7 @@ describe FiguresController do
   end
 
   it "allows you to create a new figure with a title" do
+
     visit '/figures/new'
     fill_in :figure_name, :with => "Doctor Who"
     check "title_#{Title.first.id}"
