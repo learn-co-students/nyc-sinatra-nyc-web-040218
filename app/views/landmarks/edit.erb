@@ -1,18 +1,12 @@
 <html>
-<h1> <%= @landmark.name %> </h1>
+<h1> Edit: <%= @landmark.name %> </h1>
   <form action="/landmarks/<%= @landmark.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="PATCH"/>
 
-    <p>Landmark Name: <input type="text" name="landmark[name]" id="landmark_name"></p>
+    <p>Landmark Name: <input type="text" name="landmark[name]" id="landmark_name" value="<%=@landmark.name%>"></p>
 
-    <p>Landmark Year: <input type="text" name="landmark[year_completed]" id="landmark_year_completed"></p>
+    <p>Landmark Year: <input type="text" name="landmark[year_completed]" id="landmark_year_completed" value="<%=@landmark.year_completed%>"></p>
 
-    <% @landmarks.each do |landmark| %>
-      <div>
-        <input type="checkbox" id="landmark_<%= "#{landmark.id}" %>" name="figure[landmark_ids][]" value="<%= landmark.name%>">
-        <label for="landmark_name"><%= landmark.name %></label>
-      </div>
-    <% end %>
     <input type="submit" value="Edit Landmark">
 
   </form>

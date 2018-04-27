@@ -1,5 +1,5 @@
 <html>
-<h1> <%= @figure.name %> </h1>
+<h1> Edit: <%= @figure.name %> </h1>
   <form action="/figures/<%= @figure.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="PATCH"/>
 

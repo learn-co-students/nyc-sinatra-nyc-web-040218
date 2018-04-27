@@ -28,7 +28,7 @@ class FiguresController < ApplicationController
         new_landmark = Landmark.create(params[:landmark])
         new_figure.landmarks << new_landmark
       end
-      redirect to ("/figures/#{new_figure.id}")
+      redirect to "/figures/#{@figure.id}"
     end
 
     get '/figures/:id/edit' do
